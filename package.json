@@ -1,0 +1,29 @@
+{
+  "name": "pdf-to-jpeg-converter-mcp",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "pdf",
+    "jpeg",
+    "converter"
+  ],
+  "author": "Sho Utsuki",
+  "license": "MIT",
+  "description": "A Model Context Protocol (MCP) server that converts PDF files to JPEG images",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "node-poppler": "^8.0.4",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  }
+}

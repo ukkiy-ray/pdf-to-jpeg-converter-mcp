@@ -1,12 +1,22 @@
 {
-  "name": "pdf-to-jpeg-converter-mcp",
+  "name": "@ukkiy-ray/pdf-to-jpeg-converter-mcp",
   "version": "1.0.0",
+  "private": true,
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "pdf-to-jpeg-converter": "build/index.js"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "mcp",

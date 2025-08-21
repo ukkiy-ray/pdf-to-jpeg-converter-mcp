@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -35,7 +36,6 @@ async function main() {
             };
         }
         try {
-            // ★★★ 修正点 1: poppler.info -> poppler.pdfInfo に変更
             const info = await poppler.pdfInfo(filePath);
             const metadataJson = JSON.stringify(info, null, 2);
             return {
@@ -63,7 +63,6 @@ async function main() {
             };
         }
         try {
-            // ★★★ 修正点 2: { jpeg: true } -> { format: 'jpeg' } に変更
             await poppler.pdfToCairo(filePath, outputPrefix, { jpegFile: true });
             return {
                 content: [{ type: "text", text: `${filename} のJPEGへの変換が完了しました。ファイルはPDFと同じフォルダに保存されています。` }],
